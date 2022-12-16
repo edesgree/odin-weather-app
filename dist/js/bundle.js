@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("__webpack_require__(/*! ./mystyles.scss */ \"./src/mystyles.scss\");\nconsole.log('hello!sddd');\n\n\n//# sourceURL=webpack://bulma-webpack/./src/index.js?");
+eval("__webpack_require__(/*! ./mystyles.scss */ \"./src/mystyles.scss\");\nconsole.log('hello!sddd');\n\nconst button = document.getElementById('searchBtn');\nconst input = document.getElementById('searchInput');\nconst form = document.getElementById('form');\nconst API_KEY = 'e2ead4f2ee6f037d43f3ec39032c2ba3';\n\nasync function fetchWeather(place) {\n  try {\n    const response = await fetch(\n      `https://api.openweathermap.org/data/2.5/weather?q=${place}&APPID=${API_KEY}`,\n      { mode: 'cors' }\n    );\n    const weatherData = await response.json();\n    console.log('weatherData', weatherData);\n  } catch (error) {\n    console.log(`there was an error : ${error}`);\n  }\n}\n\nform.addEventListener('submit', (e) => {\n  fetchWeather(search.value);\n  console.log(search.value);\n  e.preventDefault();\n});\n\n\n//# sourceURL=webpack://bulma-webpack/./src/index.js?");
 
 /***/ })
 
