@@ -24,10 +24,10 @@ const data = (() => {
     }
   }
   function KelvinToCelcius(k) {
-    return (k - 273.15).toFixed(2);
+    return (k - 273.15).toFixed(1);
   }
   function KelvinToFahrenheit(k) {
-    return (1.8 * (k - 273) + 32).toFixed(2);
+    return (1.8 * (k - 273) + 32).toFixed(1);
   }
   function processData(weatherData) {
     const myData = {
