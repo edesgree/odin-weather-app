@@ -12,24 +12,61 @@
   <script defer src="js/bundle.js"></script><link href="css/mystyles.css" rel="stylesheet"></head>
 
   <body>
-    <div id="content" class="container">
-      <form action="" id="form">
-        <div class="field">
-          <div class="control">
-            <input
-              class="input"
-              name="search"
-              id="searchInput"
-              type="text"
-              placeholder="weather location"
-            />
+    <div id="content" class="container is-max-desktop">
+      <section class="section">
+        <header class=""><h1 class="title">Weather app</h1></header>
+        <form action="" class="" id="form">
+          <div class="field is-horizontal">
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input
+                    class="input is-medium"
+                    name="search"
+                    id="searchInput"
+                    type="text"
+                    placeholder="weather location"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <button id="searchBtn" class="button is-primary" type="submit">
+                  lookup weather
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="section">
+        <div id="result" class="card">
+          <header class="card-header">
+            <p class="card-header-title" data-result-city>Le pouliguen</p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <p>Temperature: <span data-result-temperature>6.67</span>°C</p>
+              <p data-result-description>pas chaud!</p>
+              <p>
+                Feel like:
+                <span data-result-feel-temperature class="">2.9C</span>
+              </p>
+              <p>
+                Humidity:
+                <span data-result-humidity class="">55%</span>
+              </p>
+              <p>
+                Wind:
+                <span data-result-wind class="">5km/h</span>
+              </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div data-raw class=""></div>
           </div>
         </div>
-        <button id="searchBtn" class="button is-primary" type="submit">
-          lookup weather
-        </button>
-      </form>
-      <div id="result"></div>
+      </section>
     </div>
   </body>
 </html>
