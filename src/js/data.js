@@ -24,10 +24,10 @@ const data = (() => {
     }
   }
   function KelvinToCelcius(k) {
-    return k - 273.15;
+    return (k - 273.15).toFixed(2);
   }
   function KelvinToFahrenheit(k) {
-    return 1.8 * (k - 273) + 32;
+    return (1.8 * (k - 273) + 32).toFixed(2);
   }
   function processData(weatherData) {
     const myData = {
@@ -35,11 +35,15 @@ const data = (() => {
       wind: weatherData.wind.speed,
       location: weatherData.name,
       temperature: {
-        k: weatherData.main.temp,
-        f: KelvinToFahrenheit(weatherData.main.temp),
-        c: KelvinToCelcius(weatherData.main.temp)
+        k: `${weatherData.main.temp}°K`,
+        f: `${KelvinToFahrenheit(weatherData.main.temp)}°F`,
+        c: `${KelvinToCelcius(weatherData.main.temp)}°C`
       },
-      feelLikeTemp: weatherData.main.feels_like,
+      feelLikeTemp: {
+        k: `${weatherData.main.feels_like}°K`,
+        f: `${KelvinToFahrenheit(weatherData.main.feels_like)}°F`,
+        c: `${KelvinToCelcius(weatherData.main.feels_like)}°C`
+      },
       humidity: weatherData.main.humidity
     };
     return myData;
