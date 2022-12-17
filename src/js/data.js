@@ -1,6 +1,6 @@
 const data = (() => {
   const API_KEY = 'e2ead4f2ee6f037d43f3ec39032c2ba3';
-
+  const DEFAULT_CITY = 'auckland';
   async function fetchWeather(place) {
     try {
       console.log('fetchWeather');
@@ -16,11 +16,22 @@ const data = (() => {
 
       const newData = processData(weatherData);
       console.log('newData processed', newData);
+      //saveToStorage(newData.location);
       return newData;
 
       // reset form
     } catch (error) {
       console.log(`there was an error : ${error}`);
+    }
+  }
+  function saveToStorage(obj) {
+    localStorage.setItem('weatherCurrentCity', JSON.stringify(obj));
+  }
+  function loadSavedCity() {
+    if (localStorage.getItem('weatherCurrentCity') === null) {
+      return DEFAULT_CITY;
+    } else {
+      return JSON.parse(localStorage.getItem('weatherCurrentCity'));
     }
   }
   function KelvinToCelcius(k) {
@@ -34,6 +45,7 @@ const data = (() => {
       desc: weatherData.weather[0].description,
       wind: weatherData.wind.speed,
       location: weatherData.name,
+      icon: weatherData.weather[0].icon,
       temperature: {
         k: `${weatherData.main.temp}°K`,
         f: `${KelvinToFahrenheit(weatherData.main.temp)}°F`,
@@ -48,7 +60,7 @@ const data = (() => {
     };
     return myData;
   }
-  return { fetchWeather };
+  return { fetchWeather, loadSavedCity, saveToStorage };
 })();
 
 export default data;

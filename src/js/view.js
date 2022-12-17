@@ -10,6 +10,7 @@ const view = (() => {
   const resultWind = document.querySelector('[data-result-wind]');
   const resultDesc = document.querySelector('[data-result-description]');
   const dataraw = document.querySelector('[data-raw]');
+  const resultIcon = document.querySelector('[data-result-icon]');
 
   function displayData(newData, tempScale) {
     //tempScale: f(farheineit) c(celcius) k(kelvin)
@@ -37,6 +38,7 @@ const view = (() => {
     resultTemperature.textContent = newData.temperature[tempScale];
     resultFeelTemp.textContent = newData.feelLikeTemp[tempScale];
     resultHumidity.textContent = newData.humidity;
+    resultIcon.src = `http://openweathermap.org/img/wn/${newData.icon}@2x.png`;
   }
   return { displayData };
 })();
