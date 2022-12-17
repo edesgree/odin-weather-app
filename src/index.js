@@ -41,4 +41,6 @@ async function getCurrentWeather(currentCity) {
   }
 }
 console.log('current city: ', currentCity);
+console.log('newData.date time', utils.timeConverter('1671296274'));
+
 getCurrentWeather(currentCity);

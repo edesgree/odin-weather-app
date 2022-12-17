@@ -1,4 +1,5 @@
 import view from './view';
+import utils from './utils';
 
 const data = (() => {
   const API_KEY = 'e2ead4f2ee6f037d43f3ec39032c2ba3';
@@ -60,7 +61,8 @@ const data = (() => {
         f: `${KelvinToFahrenheit(weatherData.main.feels_like)}°F`,
         c: `${KelvinToCelcius(weatherData.main.feels_like)}°C`
       },
-      humidity: weatherData.main.humidity
+      humidity: weatherData.main.humidity,
+      date: utils.timeConverter(weatherData.dt)
     };
     return myData;
   }

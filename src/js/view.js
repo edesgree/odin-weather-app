@@ -9,6 +9,7 @@ const view = (() => {
   const resultHumidity = document.querySelector('[data-result-humidity]');
   const resultWind = document.querySelector('[data-result-wind]');
   const resultDesc = document.querySelector('[data-result-description]');
+  const resultDate = document.querySelector('[data-result-date]');
   const dataraw = document.querySelector('[data-raw]');
   const resultIcon = document.querySelector('[data-result-icon]');
   const loading = document.getElementById('loading');
@@ -33,9 +34,11 @@ const view = (() => {
     console.log(
       `newData.temperature.${tempScale}: ${newData.temperature[tempScale]}'`
     );
+    console.log('newData.date', newData.date);
 
     resultCity.textContent = newData.location;
     resultDesc.textContent = newData.desc;
+    resultDate.textContent = newData.date;
     resultWind.textContent = newData.wind;
     resultTemperature.textContent = newData.temperature[tempScale];
     resultFeelTemp.textContent = newData.feelLikeTemp[tempScale];
