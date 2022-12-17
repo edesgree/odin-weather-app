@@ -4,6 +4,8 @@ body {
     rgba(99, 251, 215, 1) -0.4%,
     rgba(5, 222, 250, 1) 100.2%
   );
+  background-position: center center;
+  background-size: cover;
 }
 
 .temperature {
@@ -80,6 +82,15 @@ body {
         line-height: 1em;
       }
       .weather-info-desc {
+        margin-bottom: 20px;
+      }
+      .weather-info-gif {
+        background-position: center center;
+        background-size: cover;
+        border-radius: 200px;
+        height: 200px;
+        overflow: hidden;
+        width: 200px;
       }
     }
   }

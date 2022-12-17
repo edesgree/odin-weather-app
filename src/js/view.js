@@ -26,7 +26,7 @@ const view = (() => {
     resultFeelTemp.textContent = newData.feelLikeTemp[tempScale];
     resultHumidity.textContent = newData.humidity;
     resultIcon.src = `http://openweathermap.org/img/wn/${newData.icon}@2x.png`;
-    resultGIF.src = GIFsrc;
+    resultGIF.style.backgroundImage = `url(${GIFsrc})`;
   }
   function displayError(error) {
     if (error === null) {

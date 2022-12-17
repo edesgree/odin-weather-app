@@ -15645,7 +15645,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem; }
 
 body {
-  background-image: linear-gradient(68.4deg, #63fbd7 -0.4%, #05defa 100.2%); }
+  background-image: linear-gradient(68.4deg, #63fbd7 -0.4%, #05defa 100.2%);
+  background-position: center center;
+  background-size: cover; }
 
 .temperature {
   text-transform: uppercase; }
@@ -15702,6 +15704,15 @@ body {
     .section-content .weather-info-primary .weather-info-general .weather-info-temp {
       font-size: 5em;
       line-height: 1em; }
+    .section-content .weather-info-primary .weather-info-general .weather-info-desc {
+      margin-bottom: 20px; }
+    .section-content .weather-info-primary .weather-info-general .weather-info-gif {
+      background-position: center center;
+      background-size: cover;
+      border-radius: 200px;
+      height: 200px;
+      overflow: hidden;
+      width: 200px; }
 
 .section-content .weather-info-secondary p {
   display: flex;
