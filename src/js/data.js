@@ -67,7 +67,22 @@ const data = (() => {
     };
     return myData;
   }
-  return { fetchWeather, loadSavedCity, saveToStorage };
+  //giphy image
+  async function fetchGIF(word) {
+    try {
+      const response = await fetch(
+        `https://api.giphy.com/v1/gifs/translate?api_key=uRh1bQ2CXkAb9cGLoJEJdkehmoKdZ1NC&s=${word}`,
+        {
+          mode: 'cors'
+        }
+      );
+      const gifData = await response.json();
+      return gifData.data.images.original.url;
+    } catch (error) {
+      console.log(`there was an error with Giphy api: ${error}`);
+    }
+  }
+  return { fetchWeather, loadSavedCity, saveToStorage, fetchGIF };
 })();
 
 export default data;

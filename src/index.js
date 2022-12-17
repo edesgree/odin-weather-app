@@ -9,6 +9,7 @@ const form = document.getElementById('form');
 const toggleTemp = document.querySelector('[data-toggle-temp]');
 let currentCity = data.loadSavedCity();
 let currentWeather = {};
+let currentWeatherGIF;
 let tempMode = 'c';
 
 button.addEventListener('click', (e) => getCurrentWeather(searchInput.value));
@@ -30,9 +31,11 @@ async function getCurrentWeather(currentCity) {
   try {
     view.loading.display = 'block';
     currentWeather = await data.fetchWeather(currentCity);
+    currentWeatherGIF = await data.fetchGIF(currentWeather.desc);
+    console.log('currentWeatherGIF', currentWeatherGIF);
     view.loading.display = 'none';
 
-    view.displayData(currentWeather, tempMode);
+    view.displayData(currentWeather, tempMode, currentWeatherGIF);
     data.saveToStorage(currentCity);
   } catch (error) {
     console.log('cannot get data from fetchweather', error);

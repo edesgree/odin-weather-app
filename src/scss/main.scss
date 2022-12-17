@@ -61,20 +61,25 @@ body {
     display: flex;
     justify-content: space-between;
     .city-info {
+      flex: 2;
       .city-info-name {
+        align-items: center;
+        display: flex;
         font-size: 3em;
+        .weather-info-icon {
+        }
       }
       .city-info-date {
+        margin-bottom: 30px;
       }
     }
     .weather-info-general {
+      flex: 1;
       .weather-info-temp {
         font-size: 5em;
         line-height: 1em;
       }
       .weather-info-desc {
-      }
-      .weather-info-icon {
       }
     }
   }

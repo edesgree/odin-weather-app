@@ -15689,11 +15689,19 @@ body {
 .section-content .weather-info-primary {
   display: flex;
   justify-content: space-between; }
-  .section-content .weather-info-primary .city-info .city-info-name {
-    font-size: 3em; }
-  .section-content .weather-info-primary .weather-info-general .weather-info-temp {
-    font-size: 5em;
-    line-height: 1em; }
+  .section-content .weather-info-primary .city-info {
+    flex: 2; }
+    .section-content .weather-info-primary .city-info .city-info-name {
+      align-items: center;
+      display: flex;
+      font-size: 3em; }
+    .section-content .weather-info-primary .city-info .city-info-date {
+      margin-bottom: 30px; }
+  .section-content .weather-info-primary .weather-info-general {
+    flex: 1; }
+    .section-content .weather-info-primary .weather-info-general .weather-info-temp {
+      font-size: 5em;
+      line-height: 1em; }
 
 .section-content .weather-info-secondary p {
   display: flex;

@@ -10,10 +10,11 @@ const view = (() => {
   const resultDesc = document.querySelector('[data-result-description]');
   const resultDate = document.querySelector('[data-result-date]');
   const resultIcon = document.querySelector('[data-result-icon]');
+  const resultGIF = document.querySelector('[data-result-gif]');
   const loading = document.getElementById('loading');
   const message = document.querySelector('[data-message]');
   const messageText = document.querySelector('[data-message-text]');
-  function displayData(newData, tempScale) {
+  function displayData(newData, tempScale, GIFsrc) {
     //tempScale: f(farheineit) c(celcius) k(kelvin)
     if (!newData) return;
 
@@ -25,6 +26,7 @@ const view = (() => {
     resultFeelTemp.textContent = newData.feelLikeTemp[tempScale];
     resultHumidity.textContent = newData.humidity;
     resultIcon.src = `http://openweathermap.org/img/wn/${newData.icon}@2x.png`;
+    resultGIF.src = GIFsrc;
   }
   function displayError(error) {
     if (error === null) {
