@@ -10,7 +10,7 @@ const toggleTemp = document.querySelector('[data-toggle-temp]');
 let currentCity = data.loadSavedCity();
 let currentWeather = {};
 let tempMode = 'c';
-toggleTemp.firstElementChild.textContent = tempMode;
+//toggleTemp.firstElementChild.textContent = tempMode;
 
 button.addEventListener('click', (e) => getCurrentWeather(searchInput.value));
 
@@ -23,7 +23,8 @@ toggleTemp.addEventListener('click', (e) => {
   e.preventDefault();
   if (Object.keys(currentWeather).length === 0) return;
   tempMode === 'f' ? (tempMode = 'c') : (tempMode = 'f');
-  toggleTemp.firstElementChild.textContent = tempMode;
+  //toggleTemp.firstElementChild.textContent = tempMode;
+  toggleTemp.classList.toggle('active');
   view.displayData(currentWeather, tempMode);
 });
 
