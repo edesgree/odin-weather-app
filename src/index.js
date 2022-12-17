@@ -27,11 +27,16 @@ toggleTemp.addEventListener('click', (e) => {
 
 async function getCurrentWeather(currentCity) {
   try {
+    view.loading.display = 'block';
     currentWeather = await data.fetchWeather(currentCity);
+    view.loading.display = 'none';
+
     view.displayData(currentWeather, tempMode);
     data.saveToStorage(currentCity);
   } catch (error) {
     console.log('cannot get data from fetchweather', error);
+
+    view.message.textContent = error;
   }
 }
 

@@ -7886,3 +7886,27 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .temperature {
   text-transform: uppercase; }
 
+#loading {
+  animation: spin 1s linear infinite;
+  border: 3px solid #f3f3f3;
+  /* Light grey */
+  border-radius: 50%;
+  border-top: 3px solid #8a4d76;
+  /* Blue */
+  height: 16px;
+  width: 16px; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.submit-area {
+  align-items: center;
+  display: flex;
+  gap: 5px; }
+
+.message {
+  font-size: small; }
+

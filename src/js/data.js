@@ -1,3 +1,5 @@
+import view from './view';
+
 const data = (() => {
   const API_KEY = 'e2ead4f2ee6f037d43f3ec39032c2ba3';
   const DEFAULT_CITY = 'auckland';
@@ -17,11 +19,13 @@ const data = (() => {
       const newData = processData(weatherData);
       console.log('newData processed', newData);
       //saveToStorage(newData.location);
+      view.displayError(null);
       return newData;
 
       // reset form
     } catch (error) {
       console.log(`there was an error : ${error}`);
+      view.displayError(error);
     }
   }
   function saveToStorage(obj) {
