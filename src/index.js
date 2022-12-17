@@ -10,7 +10,6 @@ const toggleTemp = document.querySelector('[data-toggle-temp]');
 let currentCity = data.loadSavedCity();
 let currentWeather = {};
 let tempMode = 'c';
-//toggleTemp.firstElementChild.textContent = tempMode;
 
 button.addEventListener('click', (e) => getCurrentWeather(searchInput.value));
 
@@ -23,7 +22,6 @@ toggleTemp.addEventListener('click', (e) => {
   e.preventDefault();
   if (Object.keys(currentWeather).length === 0) return;
   tempMode === 'f' ? (tempMode = 'c') : (tempMode = 'f');
-  //toggleTemp.firstElementChild.textContent = tempMode;
   toggleTemp.classList.toggle('active');
   view.displayData(currentWeather, tempMode);
 });
@@ -40,8 +38,6 @@ async function getCurrentWeather(currentCity) {
     console.log('cannot get data from fetchweather', error);
   }
 }
-console.log('current city: ', currentCity);
-console.log('newData.date time', utils.timeConverter('1671296274'));
 
 function init() {
   //get parameters from browser url

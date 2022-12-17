@@ -6,16 +6,16 @@ const data = (() => {
   const DEFAULT_CITY = 'auckland';
   async function fetchWeather(place) {
     try {
+      //fetch data from weather API
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${place}&APPID=${API_KEY}`,
         { mode: 'cors' }
       );
       if (!response.ok) throw new Error(`City ${place} not found`);
-
+      //parse data into json
       const weatherData = await response.json();
-
       console.log('weatherData', weatherData);
-
+      // process data into a custom object, so we keep what we need only
       const newData = processData(weatherData);
       console.log('newData processed', newData);
 
@@ -38,12 +38,14 @@ const data = (() => {
       return JSON.parse(localStorage.getItem('weatherCurrentCity'));
     }
   }
+  //temperature conversion
   function KelvinToCelcius(k) {
     return (k - 273.15).toFixed(1);
   }
   function KelvinToFahrenheit(k) {
     return (1.8 * (k - 273) + 32).toFixed(1);
   }
+  //create a custom object with weather data
   function processData(weatherData) {
     const myData = {
       desc: weatherData.weather[0].description,

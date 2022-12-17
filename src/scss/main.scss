@@ -70,10 +70,20 @@ body {
     .weather-info-general {
       .weather-info-temp {
         font-size: 5em;
+        line-height: 1em;
       }
       .weather-info-desc {
       }
       .weather-info-icon {
+      }
+    }
+  }
+  .weather-info-secondary {
+    p {
+      display: flex;
+      flex-direction: row;
+      span.label {
+        width: 90px;
       }
     }
   }
