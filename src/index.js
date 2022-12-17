@@ -1,4 +1,4 @@
-require('./mystyles.scss');
+require('./scss/mystyles.scss');
 import utils from './js/utils';
 import view from './js/view';
 import data from './js/data';
