@@ -1,4 +1,5 @@
 require('./mystyles.scss');
+import utils from './js/utils';
 import view from './js/view';
 import data from './js/data';
 
@@ -36,8 +37,8 @@ async function getCurrentWeather(currentCity) {
   } catch (error) {
     console.log('cannot get data from fetchweather', error);
 
-    view.message.textContent = error;
+    //view.displayError(error);
   }
 }
-
+console.log('current city: ', currentCity);
 getCurrentWeather(currentCity);

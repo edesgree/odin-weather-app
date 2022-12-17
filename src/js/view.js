@@ -13,6 +13,7 @@ const view = (() => {
   const resultIcon = document.querySelector('[data-result-icon]');
   const loading = document.getElementById('loading');
   const message = document.querySelector('[data-message]');
+  const messageText = document.querySelector('[data-message-text]');
   function displayData(newData, tempScale) {
     //tempScale: f(farheineit) c(celcius) k(kelvin)
     console.log('displaydata', newData);
@@ -45,13 +46,13 @@ const view = (() => {
     if (error === null) {
       view.message.style.display = 'none';
     } else {
-      console.log('display error');
+      console.log('display error', error);
       view.message.style.display = 'block';
       console.log('view.message', view.message);
-      view.message.textContent = error;
+      view.messageText.textContent = error;
     }
   }
-  return { displayData, displayError, loading, message };
+  return { displayData, displayError, loading, message, messageText };
 })();
 
 export default view;
