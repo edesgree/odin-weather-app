@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Name</title>
+    <title>La météo</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
     <link rel="stylesheet" href="css/styles.css" />
@@ -12,11 +12,13 @@
 
   <body>
     <div id="content" class="container is-max-desktop">
-      <section class="section">
-        <header class="block"><h1 class="title">Weather app</h1></header>
+      <section class="section section-form">
+        <header class="block">
+          <h1 class="title">Le weather <i class="fa-solid fa-umbrella"></i></h1>
+        </header>
         <form action="" class="" id="form">
           <div class="field has-addons">
-            <div class="control">
+            <div class="control control-input">
               <input
                 class="input is-medium"
                 name="search"
@@ -36,13 +38,9 @@
                 </span>
               </button>
             </div>
-
-            <div class="field-body">
-              <div class="field"></div>
-              <div class="field submit-area">
-                <div id="loading" style="display: none">loading</div>
-              </div>
-            </div>
+          </div>
+          <div class="field submit-area">
+            <div id="loading" style="display: none"></div>
           </div>
           <div class="field">
             <div
@@ -56,8 +54,8 @@
         </form>
       </section>
 
-      <section class="section">
-        <div id="result" class="card">
+      <section class="section section-content">
+        <div class="card2">
           <header class="card-header">
             <p class="card-header-title" data-result-city>Le pouliguen</p>
             <button

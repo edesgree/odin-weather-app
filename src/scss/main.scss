@@ -1,16 +1,45 @@
+body {
+  background-image: linear-gradient(
+    68.4deg,
+    rgba(99, 251, 215, 1) -0.4%,
+    rgba(5, 222, 250, 1) 100.2%
+  );
+}
+
 .temperature {
   text-transform: uppercase;
 }
-
-#loading {
-  animation: spin 1s linear infinite;
-  border: 3px solid #f3f3f3; /* Light grey */
-  border-radius: 50%;
-  border-top: 3px solid $primary; /* Blue */
-  height: 16px;
-  width: 16px;
+#content {
+  width: 400px;
 }
 
+//form
+.section-form {
+  padding-bottom: 0;
+
+  h1.title {
+    color: white;
+  }
+  .submit-area {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+  }
+  .message {
+    font-size: small;
+  }
+  .control-input {
+    flex: 1;
+  }
+  #loading {
+    animation: spin 1s linear infinite;
+    border: 3px solid transparent; /* Light grey */
+    border-radius: 50%;
+    border-top: 3px solid $primary; /* Blue */
+    height: 16px;
+    width: 16px;
+  }
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -18,17 +47,4 @@
   100% {
     transform: rotate(360deg);
   }
-}
-
-//form
-h1.title {
-  color: $pink;
-}
-.submit-area {
-  align-items: center;
-  display: flex;
-  gap: 5px;
-}
-.message {
-  font-size: small;
 }

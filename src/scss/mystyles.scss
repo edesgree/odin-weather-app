@@ -12,6 +12,7 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 
 // Set your brand colors
 $purple: #8a4d76;
+$blue: rgb(15, 104, 114);
 $pink: #fa7c91;
 $brown: #757763;
 $beige-light: #d0d1cd;
@@ -20,11 +21,11 @@ $beige-lighter: #eff0eb;
 // Update Bulma's global variables
 $family-sans-serif: 'Nunito', sans-serif;
 
-$primary: $purple;
+$primary: $blue;
 $link: $pink;
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background-color: #2e304c;
 $control-border-width: 4px;
 $input-border-color: transparent;
 $input-shadow: none;
