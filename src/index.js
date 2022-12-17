@@ -18,6 +18,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 });
 
+// toggle temperature between Celcius and Fareinheit
 toggleTemp.addEventListener('click', (e) => {
   e.preventDefault();
   if (Object.keys(currentWeather).length === 0) return;
@@ -36,11 +37,21 @@ async function getCurrentWeather(currentCity) {
     data.saveToStorage(currentCity);
   } catch (error) {
     console.log('cannot get data from fetchweather', error);
-
-    //view.displayError(error);
   }
 }
 console.log('current city: ', currentCity);
 console.log('newData.date time', utils.timeConverter('1671296274'));
 
-getCurrentWeather(currentCity);
+function init() {
+  //get parameters from browser url
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  // load page with url parameter or with currentCity in memory
+  if (urlParams.has('search')) {
+    getCurrentWeather(urlParams.get('search'));
+  } else {
+    getCurrentWeather(currentCity);
+  }
+}
+
+init();

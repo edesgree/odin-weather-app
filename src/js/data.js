@@ -6,7 +6,6 @@ const data = (() => {
   const DEFAULT_CITY = 'auckland';
   async function fetchWeather(place) {
     try {
-      console.log('fetchWeather');
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${place}&APPID=${API_KEY}`,
         { mode: 'cors' }
@@ -19,19 +18,19 @@ const data = (() => {
 
       const newData = processData(weatherData);
       console.log('newData processed', newData);
-      //saveToStorage(newData.location);
+
       view.displayError(null);
       return newData;
-
-      // reset form
     } catch (error) {
       console.log(`there was an error : ${error}`);
       view.displayError(error);
     }
   }
+  // save to local storage
   function saveToStorage(obj) {
     localStorage.setItem('weatherCurrentCity', JSON.stringify(obj));
   }
+  // load saved city from local storage
   function loadSavedCity() {
     if (localStorage.getItem('weatherCurrentCity') === null) {
       return DEFAULT_CITY;

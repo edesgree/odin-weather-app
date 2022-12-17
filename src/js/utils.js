@@ -1,16 +1,5 @@
 const utils = (() => {
-  document.addEventListener('DOMContentLoaded', () => {
-    (document.querySelectorAll('.notification .delete') || []).forEach(
-      ($delete) => {
-        const $notification = $delete.parentNode;
-
-        $delete.addEventListener('click', () => {
-          $notification.parentNode.removeChild($notification);
-        });
-      }
-    );
-  });
-
+  // convert timestamp into date
   function timeConverter(UNIX_timestamp) {
     var a = new Date(UNIX_timestamp * 1000);
     var months = [
