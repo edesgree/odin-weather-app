@@ -5,7 +5,7 @@ The app return a weather forecast for a user provided city name.
 
 🔗 **Live preview:** [here](https://edesgree.github.io/odin-weather-app/dist/)
 
-![alt text](https://github.com/[edesgree]/[odin-weather-app]/blob/[main]/src/img/screenshot.png?raw=true)
+![alt text](https://github.com/edesgree/odin-weather-app/blob/main/src/img/screenshot.png?raw=true)
 
 ## Built with
 
