@@ -24,7 +24,7 @@ toggleTemp.addEventListener('click', (e) => {
   if (Object.keys(currentWeather).length === 0) return;
   tempMode === 'f' ? (tempMode = 'c') : (tempMode = 'f');
   toggleTemp.classList.toggle('active');
-  view.displayData(currentWeather, tempMode);
+  view.displayData(currentWeather, tempMode, currentWeatherGIF);
 });
 
 async function getCurrentWeather(currentCity) {
