@@ -7902,6 +7902,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   100% {
     transform: rotate(360deg); } }
 
+h1.title {
+  color: #fa7c91; }
+
 .submit-area {
   align-items: center;
   display: flex;

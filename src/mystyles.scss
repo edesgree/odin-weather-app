@@ -23,34 +23,4 @@ $input-border-color: transparent;
 $input-shadow: none;
 
 @import '~bulma/bulma';
-.temperature {
-  text-transform: uppercase;
-}
-
-#loading {
-  animation: spin 1s linear infinite;
-  border: 3px solid #f3f3f3; /* Light grey */
-  border-radius: 50%;
-  border-top: 3px solid $primary; /* Blue */
-  height: 16px;
-  width: 16px;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-//form
-.submit-area {
-  align-items: center;
-  display: flex;
-  gap: 5px;
-}
-.message {
-  font-size: small;
-}
+@import 'scss/main.scss';
